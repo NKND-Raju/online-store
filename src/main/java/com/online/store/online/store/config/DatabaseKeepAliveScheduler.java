@@ -27,7 +27,7 @@ public class DatabaseKeepAliveScheduler {
     public void keepConnectionAlive() {
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) { 
-        	
+
             statement.execute("SELECT 1");
             log.info("Successfully pinged the database to keep connection alive.");
         } catch (Exception e) {
