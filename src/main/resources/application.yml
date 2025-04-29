@@ -1,5 +1,5 @@
 server:
-  port: 5100
+  port: 8080
   # Enable response compression
   compression:
     enabled: true
