@@ -67,3 +67,4 @@ springdoc:
   version: 1.2
   cache:
     disabled: true
+cors.url: "*"
