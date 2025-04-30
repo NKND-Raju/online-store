@@ -31,7 +31,7 @@ public class DatabaseKeepAliveScheduler {
             statement.execute("SELECT 1");
             log.info("Successfully pinged the database to keep connection alive.");
         } catch (Exception e) {
-            log.error("Failed to ping database: ", e);
+            log.error("Failed to ping database: ", e); 
         }
     }
 }
