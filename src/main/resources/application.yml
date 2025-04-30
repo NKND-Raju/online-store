@@ -8,14 +8,14 @@ server:
     # Compress the response only if the response size is at least 1KB
     min-response-size: 1024
   servlet:
-    context-path: /wallet
+    context-path: /onlinestores
 
 # Service configurations - application name, db
 spring:
   main:
     allow-circular-references: true
   application:
-    name: wallet-service
+    name: onlinestores-service
   profiles:
     active: uat
   datasource:
@@ -37,25 +37,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
-  cache:
-    type: redis
-
-# Redis Configuration
-redis:
-  host: localhost
-  port: 6379
-  password:  # Assuming no password, update if needed
-
-eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://localhost:7601/eureka/  
-  instance:
-    preferIpAddress: true
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
 
 management:
   endpoints:
@@ -67,4 +48,5 @@ springdoc:
   version: 1.2
   cache:
     disabled: true
-cors.url: "*"
+cors:
+  url: "*"
