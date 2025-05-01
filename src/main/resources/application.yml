@@ -1,29 +1,22 @@
 server:
-  port: 8080
-  # Enable response compression
+  port: ${PORT:8080}
   compression:
     enabled: true
-    # The comma-separated list of mime types that should be compressed
     mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
-    # Compress the response only if the response size is at least 1KB
     min-response-size: 1024
   servlet:
     context-path: /onlinestores
 
-# Service configurations - application name, db
 spring:
-  main:
-    allow-circular-references: true
   application:
     name: onlinestores-service
   profiles:
     active: uat
   datasource:
     driver-class-name: org.postgresql.Driver
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://aws-0-ap-south-1.pooler.supabase.com:5432/postgres
-    username: postgres.nzviboressocxjjjqbuc
-    password: Raju@9121Raju
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     hikari:
       connection-test-query: SELECT 1
       minimum-idle: 5
@@ -37,7 +30,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
-
 management:
   endpoints:
     web:
