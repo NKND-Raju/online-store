@@ -10,8 +10,6 @@ server:
 spring:
   application:
     name: onlinestores-service
-  profiles:
-    active: uat
   datasource:
     driver-class-name: org.postgresql.Driver
     url: ${DB_URL}
